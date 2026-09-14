@@ -81,7 +81,7 @@ El modelo permite generar valor económico a través de:
 
 La arquitectura implementada sigue el estándar Medallion de Databricks, optimizado para Lakehouse:
 
-![Arquitectura Medallion](arquitectura_medallion.png)
+![Arquitectura Medallion](images/arquitectura_medallion.png)
 
 *Diagrama de arquitectura: Flujo desde datos crudos (Bronze) hasta features finales (Gold), con capas de transformación y calidad.*
 
@@ -167,11 +167,11 @@ La arquitectura implementada sigue el estándar Medallion de Databricks, optimiz
 
 ### Arquitectura del Pipeline
 
-![Pipeline de Ingesta](pipeline_ingesta_1.png)
+![Pipeline de Ingesta](images/pipeline_ingesta_1.png)
 
 *Pipeline automatizado de ingesta: Desde archivos Parquet/Volumes hasta tablas Delta con transformaciones incrementales.*
 
-![Detalle del Pipeline](pipeline_ingesta_2.png)
+![Detalle del Pipeline](images/pipeline_ingesta_2.png)
 
 *Detalle de orquestación: Jobs, notebooks y dependencias en Databricks Workflows.*
 
@@ -221,11 +221,11 @@ df_silver.write.format("delta").mode("overwrite").saveAsTable("silver.cartera_in
 
 ### Orquestación con Databricks Jobs
 
-![Job Automatizado](job_automatizado_1.png)
+![Job Automatizado](images/job_automatizado_1.png)
 
 *Configuración del job: Tareas secuenciales para pipeline end-to-end (ingesta, transformación, modelado).*
 
-![Detalle de Tareas](job_automatizado_2.png)
+![Detalle de Tareas](images/job_automatizado2.png)
 
 *Detalle de tareas y dependencias: Cada notebook representa una etapa del pipeline.*
 
@@ -281,7 +281,7 @@ df_silver.write.format("delta").mode("overwrite").saveAsTable("silver.cartera_in
 
 ### Resultados de Modelos por Segmento
 
-![Resultados de Modelos](resultados_modelos.png)
+![Resultados de Modelos](images/resultados_modelos.png)
 
 *Dashboard de resultados: Comparación de modelos por segmento (A, B, C) con métricas PR-AUC, ROC-AUC, F1, Recall@Top-10%.*
 
@@ -382,7 +382,7 @@ Cada segmento tiene características distintas que requieren modelos especializa
 
 ### Visualizaciones Completas
 
-![Análisis Exploratorio](eda_completo.png)
+![Análisis Exploratorio](images/eda_graficos.png)
 
 *Dashboard de EDA: Distribución de mora, segmentación, variables financieras, triggers, boxplots por segmento y matriz de correlación.*
 
@@ -531,21 +531,21 @@ Correlaciones significativas (|r| > 0.3):
 
 ### Aplicación Interactiva
 
-![APP de Cobranza - Vista Principal](app_cobranza_1.png)
+![APP de Cobranza - Vista Principal](images/app_cobranza_1.png)
 
 *Vista principal de la aplicación: Filtros por segmento, rango de scores, y visualización de predicciones.*
 
-![APP de Cobranza - Detalles](app_cobranza_2.png)
+![APP de Cobranza - Detalles](images/app_cobranza_2.png)
 
 *Detalle de casos individuales: Información de obligación, score de riesgo, features contribuyentes y recomendaciones de acción.*
 
 ### Dashboard de Métricas
 
-![Dashboard de Cobranza - Vista General](dashboard_cobranza_1.png)
+![Dashboard de Cobranza - Vista General](images/dashboard_cobranza_1.png)
 
 *Dashboard general: KPIs de portafolio, distribución de scores, segmentación y evolución temporal.*
 
-![Dashboard de Cobranza - Análisis Detallado](dashboard_cobranza_2.png)
+![Dashboard de Cobranza - Análisis Detallado](images/dashboard_cobranza_2.png)
 
 *Análisis detallado por segmento: Métricas de modelo, casos críticos, triggers activos y priorización de gestión.*
 
